@@ -700,7 +700,7 @@ textboxesContainer.addEventListener('keydown', handleTextboxesContainerKeyDown);
 textboxesContainer.addEventListener('keyup', handleTextboxesContainerKeyUp);
 // imageUploadMethodSelect.addEventListener('change', handleUploadMethodChange);
 galleryEl.addEventListener('click', handleGalleryClick);
-gallerySearchEl.addEventListener('input', handleGallerySearchInput);
+// gallerySearchEl.addEventListener('input', handleGallerySearchInput);
 solidColorForm.addEventListener('input', handleSolidColorFormInput);
 removeTextForm.addEventListener('submit', handleTextRemoveFormSubmit);
 maxImageDimensionsForm.addEventListener('change', handleMaxImageDimensionsFormChange);
