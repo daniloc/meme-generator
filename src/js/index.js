@@ -18,6 +18,8 @@ import { toastAlert } from './toast-alert.js';
 import { Textbox } from './textbox.js';
 import { Canvas } from './canvas.js';
 
+import templates from '../assets/templates.json';
+
 const canvas = Canvas.createInstance(document.getElementById('canvas'));
 const videoModal = document.getElementById('videoModal');
 const downloadModal = document.getElementById('downloadModal');
@@ -51,6 +53,27 @@ const maxImageDimensionsFromStorage = storage.get('maxImageDimensions');
 let shouldFocusOnTextboxCreate = false;
 let selectedImage = null;
 let reqAnimFrame = null;
+
+const galleryContainer = galleryEl.querySelector('.gallery');
+
+const generateGalleryButtons = (images) => {
+  return images.map(image => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'btn btn-link';
+    
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.src = `/meme-templates/${image}`;
+    img.alt = image.replace(/-/g, ' ')
+                   .replace(/\.[^/.]+$/, '')
+                   .replace(/\b\w/g, c => c.toUpperCase());
+    img.title = img.alt;
+    
+    button.appendChild(img);
+    return button;
+  });
+};
 
 const renderAcceptedImageFormats = (acceptedMimeTypes, rootEl) => {
   if (!rootEl) {
@@ -728,3 +751,10 @@ if (maxImageDimensionsFromStorage) {
 }
 
 maxImageDimensionsSelect.disabled = false;
+
+const initGallery = () => {
+  const buttons = generateGalleryButtons(templates);
+  buttons.forEach(button => galleryContainer.appendChild(button));
+};
+
+initGallery();

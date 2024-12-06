@@ -13,7 +13,10 @@
     "build": "npm-run-all clean build:parcel",
     "postbuild": "npm run generateSW",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "generate-templates": "node src/assets/generate-template-json.js",
+    "prebuild": "npm run generate-templates",
+    "prestart": "npm run generate-templates"
   },
   "keywords": [
     "meme generator"
@@ -23,12 +26,14 @@
   "devDependencies": {
     "@eslint/js": "~9.13.0",
     "@parcel/packager-raw-url": "~2.12.0",
+    "@parcel/transformer-raw": "~2.13.2",
     "@parcel/transformer-webmanifest": "~2.12.0",
     "eslint": "~9.13.0",
     "gh-pages": "~6.2.0",
     "globals": "~15.11.0",
     "npm-run-all": "~4.1.5",
     "parcel": "~2.12.0",
+    "parcel-reporter-static-files-copy": "~1.5.3",
     "prettier": "~3.3.3",
     "rimraf": "~6.0.1",
     "workbox-cli": "~7.1.0"
@@ -43,5 +48,8 @@
     "bootstrap": "~5.3.3",
     "emoji-picker-element": "~1.22.8",
     "insert-text-at-cursor": "~0.3.0"
+  },
+  "staticFiles": {
+    "staticPath": "public"
   }
 }
