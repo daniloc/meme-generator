@@ -11,6 +11,10 @@
   font-size: 14px;
 }
 
+:root[data-bs-theme="dark"] {
+  --background-color: #1D1F27;
+}
+
 :not(:defined) {
   display: none !important;
 }
