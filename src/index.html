@@ -33,7 +33,7 @@
     </div>
 
     <header class="site-header">
-      <img src="assets/logo.png" width="90" height="90" alt="Logo" class="d-block rounded-circle border shadow-sm" aria-hidden="true">
+      <img src="../public/shocked.png" alt="Logo" id="logo" aria-hidden="true">
       <h1 class="page-title">PostHog b2b Saas Memetron 6100</h1>
 
     </header>
@@ -41,23 +41,17 @@
     <div class="container">
       <div class="row mx-0 mb-5 bg-body rounded border shadow">
         <div class="meme-column col-lg-8 col-md-7 py-3">
-          <files-dropzone class="dropzone">
             <canvas id="canvas" class="canvas border shadow-sm" hidden></canvas>
 
             <button type="button" class="clear-canvas-button btn btn-danger shadow" id="clearCanvasBtn" hidden aria-label="Clear canvas">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1.5em" height="1.5em" aria-hidden="true">
-                <path fill="currentColor" d="M128 405.429C128 428.846 147.198 448 170.667 448h170.667C364.802 448 384 428.846 384 405.429V160H128v245.429zM416 96h-80l-26.785-32H202.786L176 96H96v32h320V96z"/>
-              </svg>
+
             </button>
 
             <div id="instructions" class="instructions">
-              <div class="instructions__image"></div>
               <div>
-                <p class="mb-0">Drag & Drop an image here or click to select an image from your device.</p>
-                <p class="m-0 text-muted"><em><small>All uploaded images are processed locally in your browser. No data is sent to any server.</small></em></p>
+                <p class="mb-0">Select an image to begin transforming the minds of your industry peers.</p>
               </div>
             </div>
-          </files-dropzone>
         </div>
 
         <div class="col-lg-4 col-md-5 pt-0 pt-md-3 pb-3">
@@ -75,7 +69,7 @@
               </div>
 
               <button type="button" id="fileSelectBtn" class="btn btn-primary w-100 d-flex justify-content-center align-items-center gap-2 upload-method" hidden>
-                <img src="assets/icons/photo.svg" width="20" height="20" alt="photo icon" aria-hidden="true">
+
                 Select Image
               </button>
 

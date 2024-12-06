@@ -80,14 +80,6 @@ const renderAcceptedImageFormats = (acceptedMimeTypes, rootEl) => {
     return;
   }
 
-  const extensions = acceptedMimeTypes.map(mimeType => mimeType.split('/')[1]);
-  const str = `Supported image formats: ${extensions.join(', ')}`;
-  const div = document.createElement('div');
-  const small = document.createElement('small');
-
-  small.textContent = str;
-  div.appendChild(small);
-  rootEl.appendChild(small);
 };
 
 const generateMeme = async () => {
@@ -150,8 +142,6 @@ const setImageMaxDimensions = image => {
 
 const afterImageSelect = () => {
   canvas.draw(selectedImage, Textbox.getAll()).show();
-  dropzoneEl.classList.add('dropzone--accepted');
-  dropzoneEl.disabled = true;
   generateMemeBtn.disabled = false;
   instructionsEl.hidden = true;
   clearCanvasBtn.hidden = false;
@@ -712,7 +702,7 @@ addTextboxBtn.addEventListener('click', handleAddTextboxBtnClick);
 generateMemeBtn.addEventListener('click', generateMeme);
 downloadMemeBtn.addEventListener('click', () => (downloadModal.open = false));
 imageUrlForm.addEventListener('submit', handleImageUploadFromURL);
-dropzoneEl.addEventListener('files-dropzone-drop-accepted', handleDropFilesAccepted);
+// dropzoneEl.addEventListener('files-dropzone-drop-accepted', handleDropFilesAccepted);
 textboxesContainer.addEventListener('input', handleTextboxesContainerInput);
 textboxesContainer.addEventListener('change', handleTextboxesContainerChange);
 textboxesContainer.addEventListener('click', handleTextboxesContainerClick);
@@ -738,7 +728,7 @@ galleryEl.querySelectorAll('button > img')?.forEach(image => {
 
 Textbox.create();
 
-dropzoneEl.accept = ACCEPTED_MIME_TYPES;
+// dropzoneEl.accept = ACCEPTED_MIME_TYPES;
 
 renderAcceptedImageFormats(ACCEPTED_MIME_TYPES, instructionsEl);
 
