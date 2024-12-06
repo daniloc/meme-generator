@@ -52,6 +52,11 @@ details summary:focus-visible {
   font-weight: 500;
 }
 
+details {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+}
+
 #logo {
   height: 150px;
 }
