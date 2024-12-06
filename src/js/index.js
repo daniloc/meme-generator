@@ -27,7 +27,7 @@ const capturePhotoButton = document.getElementById('capturePhotoButton');
 const torchButton = document.getElementById('torchButton');
 const dropzoneEl = document.querySelector('files-dropzone');
 const instructionsEl = document.getElementById('instructions');
-const imageUploadMethodSelect = document.getElementById('imageUploadMethodSelect');
+// const imageUploadMethodSelect = document.getElementById('imageUploadMethodSelect');
 const fileSelectBtn = document.getElementById('fileSelectBtn');
 const imageUrlForm = document.getElementById('imageUrlForm');
 const addTextboxBtn = document.getElementById('addTextboxBtn');
@@ -698,7 +698,7 @@ textboxesContainer.addEventListener('pointerup', handleTextboxesContainerPointer
 textboxesContainer.addEventListener('pointerout', handleTextboxesContainerPointerout);
 textboxesContainer.addEventListener('keydown', handleTextboxesContainerKeyDown);
 textboxesContainer.addEventListener('keyup', handleTextboxesContainerKeyUp);
-imageUploadMethodSelect.addEventListener('change', handleUploadMethodChange);
+// imageUploadMethodSelect.addEventListener('change', handleUploadMethodChange);
 galleryEl.addEventListener('click', handleGalleryClick);
 gallerySearchEl.addEventListener('input', handleGallerySearchInput);
 solidColorForm.addEventListener('input', handleSolidColorFormInput);
